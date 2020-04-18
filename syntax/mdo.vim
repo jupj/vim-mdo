@@ -1,4 +1,4 @@
-" Vim syntax file for todo
+" Vim syntax file for mdo
 
 if exists("b:current_syntax") && b:current_syntax != "markdown"
     finish
@@ -20,4 +20,4 @@ highlight link doneItem Done
 highlight link nopItem Done
 
 
-let b:current_syntax = "markdown.todo"
+let b:current_syntax = "markdown.mdo"
