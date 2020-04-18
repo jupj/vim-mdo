@@ -1,0 +1,66 @@
+*mdo.txt* Markdown-based todo list
+
+                                     __      ~
+                      ____ ___  ____/ /___   ~
+                     / __ `__ \/ __  / __ \  ~
+                    / / / / / / /_/ / /_/ /  ~
+                   /_/ /_/ /_/\__,_/\____/   ~
+
+====================================================================
+USAGE                                                            *mdo*
+
+This plugin provides syntax highlights and commands for maintaing a
+todo list in a markdown-compatible format. The todo items are
+markdown list items, beginning with '-', with the following syntax:
+
+    - [ ]: Unchecked item
+    - [x]: Checked item
+    - NOP: Canceled/"Did not have to do this" item
+    - FWD: Postponed item
+    - WAIT: Item waiting for input
+
+====================================================================
+COMMANDS FOR LIST MANIPULATION                          *mdo-commands*
+
+--------------------------------------------------------------------
+Day manipulation commands
+
+*:MdoDay*            Create a new day header with today's date.
+
+--------------------------------------------------------------------
+Item manipulation commands
+
+*:MdoItem*            Create a new unchecked item on the next line,
+                    leaving the editor in INSERT mode for the user
+                    to insert the description for the item.
+
+*:MdoCheck*           Toggle an item between checked "[ ]" and
+                    unchecked "[x]".
+
+*:MdoNop*             Toggle an item between unchecked "[ ]" and
+                    "NOP".
+
+*:MdoWait*            Toggle an item between unchecked "[ ]" and
+                    "WAIT".
+
+*:MdoForward*         Copy an item to the end of the todo list and
+                    replace the original item's "[ ]" with "FWD".
+
+====================================================================
+NAVIGATION COMMANDS                                  *mdo-navigation*
+
+*:MdoNext*            Jump to the next "[ ]" or "WAIT" item.
+
+*:MdoPrev*            Jump to the previous "[ ]" or "WAIT" item.
+
+====================================================================
+MAPPINGS                                                *mdo-mappings*
+
+*<LocalLeader>-* |:MdoItem|
+*<LocalLeader>d* |:MdoDay|
+*<LocalLeader>f* |:MdoForward|
+*<LocalLeader>n* |:MdoNop|
+*<LocalLeader>w* |:MdoWait|
+*<LocalLeader>x* |:MdoCheck|
+
+vim:ft=help:
