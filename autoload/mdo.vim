@@ -31,15 +31,18 @@ function! mdo#newItem()
     startinsert!
 endfunction
 
-" mdo#forward marks the item as 'FWD' and copies it to the end
+" mdo#forward checks that the current line is an unchecked item, copies it to
+" the end of the file, and marks the current line as 'FWD'.
 function! mdo#forward()
     " Read line under cursor
     let l:srcLine = getline('.')
 
-    " Copy to end
-    call append(line('$'), l:srcLine)
-    " Replace '- [ ]' with '- FWD'
-    call setline('.', substitute(l:srcLine, '^\s*- \zs\[ \]\ze', 'FWD', ''))
+    if match(l:srcLine, '^\s*- \[ \]') >= 0
+        " Copy to end
+        call append(line('$'), l:srcLine)
+        " Replace '- [ ]' with '- FWD'
+        call setline('.', substitute(l:srcLine, '^\s*- \zs\[ \]\ze', 'FWD', ''))
+    endif
 endfunction
 
 " mdo#toggleCheck toggles the item between '[ ]' and '[x]'
