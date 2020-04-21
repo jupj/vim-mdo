@@ -16,7 +16,7 @@ nnoremap <buffer> <LocalLeader>- :MdoItem<cr>
 nnoremap <buffer> <LocalLeader>d :MdoDay<cr>
 nnoremap <buffer> <LocalLeader>f :MdoForward<cr>
 nnoremap <buffer> <LocalLeader>n :MdoNop<cr>
-nnoremap <buffer> <LocalLeader>w :MdoWait<cr>
+nnoremap <buffer> <LocalLeader>t :MdoWait<cr>
 nnoremap <buffer> <LocalLeader>x :MdoCheck<cr>
 
 " Navigation mappings
