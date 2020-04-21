@@ -1,3 +1,6 @@
+" Use markdown as base
+runtime! ftplugin/markdown.vim ftplugin/markdown_*.vim ftplugin/markdown/*.vim
+
 " Commands for mdo
 command MdoCheck call mdo#toggleCheck()
 command MdoDay call mdo#newDay()

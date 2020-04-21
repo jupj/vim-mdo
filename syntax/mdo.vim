@@ -1,8 +1,12 @@
 " Vim syntax file for mdo
 
-if exists("b:current_syntax") && b:current_syntax != "markdown"
+if exists("b:current_syntax")
     finish
 endif
+
+" Use markdown syntax as base
+runtime! syntax/markdown.vim
+unlet! b:current_syntax
 
 syntax match todoItem "\v(^\s*- )@<=\[ \]"
 syntax match doneItem "\v(^\s*- )@<=\[x\]"

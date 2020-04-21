@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead *.mdo setfiletype markdown.mdo
+autocmd BufNewFile,BufRead *.mdo setfiletype mdo
