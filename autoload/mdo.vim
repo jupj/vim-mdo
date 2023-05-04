@@ -42,6 +42,22 @@ function! mdo#forward()
         call append(line('$'), l:srcLine)
         " Replace '- [ ]' with '- FWD'
         call setline('.', substitute(l:srcLine, '^\s*- \zs\[ \]\ze', 'FWD', ''))
+        call mdo#next()
+    endif
+endfunction
+
+" mdo#repeat checks that the current line is an unchecked item, checks it and
+" creates a new unchecked copy of the task to the end of the file.
+function! mdo#repeat()
+    " Read line under cursor
+    let l:srcLine = getline('.')
+
+    if match(l:srcLine, '^\s*- \[ \]') >= 0
+        " Copy to next line
+        call append(line('.'), l:srcLine)
+        " Check task
+        call mdo#toggleCheck()
+        call mdo#next()
     endif
 endfunction
 

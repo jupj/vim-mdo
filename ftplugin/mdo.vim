@@ -9,6 +9,7 @@ command MdoItem call mdo#newItem()
 command MdoNext call mdo#next()
 command MdoNop call mdo#toggleNop()
 command MdoPrev call mdo#prev()
+command MdoRepeat call mdo#repeat()
 command MdoWait call mdo#toggleWait()
 
 " Leader key mappings
@@ -16,6 +17,7 @@ nnoremap <buffer> <LocalLeader>- :MdoItem<cr>
 nnoremap <buffer> <LocalLeader>d :MdoDay<cr>
 nnoremap <buffer> <LocalLeader>f :MdoForward<cr>
 nnoremap <buffer> <LocalLeader>n :MdoNop<cr>
+nnoremap <buffer> <LocalLeader>r :MdoRepeat<cr>
 nnoremap <buffer> <LocalLeader>t :MdoWait<cr>
 nnoremap <buffer> <LocalLeader>x :MdoCheck<cr>
 
